@@ -64,6 +64,12 @@ export default class PubsubContactDetails extends LightningElement {
     }
 
     handleContactSelected(contactId) {
-        this.recordId = contactId;
+        this.recordId = contactId;this.dispatchEvent(
+            new ShowToastEvent({
+                title: 'pubsubContactDetails',
+                message: contactId,
+                variant: 'info'
+            })
+        );
     }
 }
